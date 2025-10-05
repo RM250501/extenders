@@ -1,0 +1,148 @@
+/*
+ * 連想ワードゲーム - レトロテーマ (index.css)
+ */
+
+/* Google Fontsのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- 基本設定 --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- ゲームコンテナ --- */
+.game-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    border: 3px solid #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 10px #ffffff,
+        0 0 20px #ffffff inset;
+}
+
+/* --- ヘッダー --- */
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-shadow: 
+        0 0 5px #ffd700,
+        0 0 10px #ffd700;
+    margin-bottom: 10px;
+}
+
+.game-header p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+/* --- 結果表示エリア (ここを修正) --- */
+.result-section {
+    min-height: 50px;
+    padding: 15px; /* 少し余白を調整 */
+    margin: 0 auto 25px auto; /* 中央寄せとマージン調整 */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff;      /* ▼▼▼ 追加 ▼▼▼ */
+    border-radius: 5px;             /* ▼▼▼ 追加 ▼▼▼ */
+    background-color: #1a1a1a;      /* ▼▼▼ 追加 ▼▼▼ */
+}
+
+.result-message {
+    font-size: 1rem; /* 少し小さくして枠内に収まりやすくする */
+    color: #39ff14;
+    text-shadow: 
+        0 0 3px #39ff14,
+        0 0 5px #39ff14;
+}
+
+/* --- メインコンテンツ --- */
+.game-main h2 {
+    font-size: 1.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    margin-bottom: 10px;
+}
+
+/* --- テキストボックス共通スタイル --- */
+.text-box {
+    width: 80%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.text-box::placeholder {
+    color: #666;
+    font-family: sans-serif;
+}
+
+.text-box:focus {
+    box-shadow: 0 0 10px #00ffff;
+    border-color: #00ffff;
+}
+
+/* --- 個別セクション --- */
+.prompt-section {
+    margin-bottom: 30px;
+}
+
+.prompt-box {
+    background-color: #000;
+    cursor: default;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+/* --- フッターと送信ボタン --- */
+.submit-button {
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.1rem;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ffffff;
+    box-shadow: 0 0 8px #ffffff;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+    color: #ffd700;
+    border-color: #ffd700;
+    box-shadow: 
+        0 0 10px #ffd700,
+        0 0 15px #ffd700;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+.submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    text-shadow: none;
+}

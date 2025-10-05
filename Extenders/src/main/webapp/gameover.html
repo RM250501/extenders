@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ゲームオーバー</title>
-	<link rel="stylesheet" href="css/gameover.css">
-	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームオーバー</title>
+    <link rel="stylesheet" href="css/gameover2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-	<div class="container">
-		<h1 class="title" data-text="GAME OVER">GAME OVER</h1>
-		<p class="subtitle">残念...また挑戦しよう！</p>
-		<p class="score">最終スコア: <span id="final-score">00000</span>点</p>
+    <div id="results-overlay">
+        <div class="results-content">
+            <h2 class="results-title">RESULT</h2>
+            <button id="showResultsButton">結果を見る</button>
+        </div>
+    </div>
+    
+    <audio id="gameOverBGM" src="music/maou_game_jingle10.mp3" preload="auto"></audio>
+    <audio id="buttonClickSFX" src="music/maou_se_8bit16.mp3" preload="auto"></audio>
 
-		<div class="button-group">
-			<button class="retry-button" onclick="location.href='title.html'">
-				<i class="fas fa-redo-alt"></i> もう一度プレイ
-			</button>
-			<button class="title-button" onclick="location.href='title.html'">
-				<i class="fas fa-home"></i> タイトルへ戻る
-			</button>
-		</div>
-	</div>
+    <div class="container">
+        <h1 class="title" data-text="GAME OVER">GAME OVER</h1>
+        <p class="subtitle">残念...また挑戦しよう！</p>
+        
+        <div class="button-group">
+            <button class="retry-button" onclick="location.href='index.html'">
+                <i class="fas fa-redo-alt"></i> もう一度プレイ
+            </button>
+            <button class="title-button" onclick="location.href='title.html'">
+                <i class="fas fa-home"></i> タイトルへ戻る
+            </button>
+        </div>
+    </div>
 
-	<script src="js/gameover.js"></script>
+    <script src="js/gameover.js"></script>
 </body>
-
 </html>

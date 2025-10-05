@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	startButton.addEventListener('click', () => {
 		console.log('ゲーム開始！');
-		// ここで次の画面（例: login.html）に移動します
-		window.location.href = 'index.html';
+		// 次の画面に自動再生を指示するパラメータを付けて遷移
+		window.location.href = 'index.html?autoplay=true';
 	});
 });

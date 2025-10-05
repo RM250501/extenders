@@ -1,25 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const finalScoreElement = document.getElementById('final-score');
+    // --- 要素の取得 ---
+    const gameOverBGM = document.getElementById('gameOverBGM');
+    const buttonClickSFX = document.getElementById('buttonClickSFX');
+    const retryButton = document.querySelector('.retry-button');
+    const titleButton = document.querySelector('.title-button');
+    const resultsOverlay = document.getElementById('results-overlay');
+    const showResultsButton = document.getElementById('showResultsButton');
 
-	// URLパラメータからスコアを取得 (例: gameover.html?score=5400)
-	let score = 0;
-	const urlParams = new URLSearchParams(window.location.search);
-	if (urlParams.has('score')) {
-		score = parseInt(urlParams.get('score'), 10) || 0;
-	}
+    // --- 「結果を見る」ボタンの処理 ---
+    showResultsButton.addEventListener('click', () => {
+        // BGMを再生
+        gameOverBGM.volume = 0.6;
+        gameOverBGM.loop = false;
+        gameOverBGM.play().catch(error => {
+            console.log("BGMの再生に失敗しました:", error);
+        });
 
-	// スコアをカウントアップ表示する
-	let currentScore = 0;
-	const scoreAnimation = setInterval(() => {
-		// 徐々に目標スコアに近づける
-		const increment = Math.ceil((score - currentScore) / 15);
-		currentScore += increment;
+        // 効果音を再生
+        buttonClickSFX.currentTime = 0;
+        buttonClickSFX.volume = 0.8;
+        buttonClickSFX.play();
 
-		if (currentScore >= score) {
-			currentScore = score;
-			clearInterval(scoreAnimation);
-		}
-		// 5桁のゼロ埋めで表示
-		finalScoreElement.textContent = String(currentScore).padStart(5, '0');
-	}, 50);
+        // 結果オーバーレイを非表示にする
+        resultsOverlay.style.display = 'none';
+    }, { once: true }); // このイベントは一度だけ実行
+
+    // --- ゲームオーバー画面のボタン処理 ---
+    const handleButtonClick = (redirectUrl) => {
+        buttonClickSFX.currentTime = 0;
+        buttonClickSFX.volume = 0.8;
+        buttonClickSFX.play();
+        // 効果音が鳴り終わるのを待ってからページ遷移
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 300);
+    };
+
+    retryButton.addEventListener('click', (e) => {
+        e.preventDefault(); // デフォルトのonclickを一旦無効化
+        handleButtonClick('index.html');
+    });
+
+    titleButton.addEventListener('click', (e) => {
+        e.preventDefault(); // デフォルトのonclickを一旦無効化
+        handleButtonClick('title.html');
+    });
 });

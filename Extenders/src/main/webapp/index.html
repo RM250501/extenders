@@ -5,19 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>連想ワードゲーム</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/index.js"></script>
 </head>
 
 <body>
+	<audio id="game-bgm" src="music/game_play.mp3" preload="auto"></audio>
 	<div class="game-container">
 		<header class="game-header">
-			<h1>🧠 連想ワードゲーム</h1>
+			<h1>HINT GUESSER</h1>
 			<p>表示されたお題から連想されるワードを入力してね！</p>
 
-			<section class="result-section" i	d="result-area">
-				<p id="result-text" class="result-message">　</p>
+			<section class="result-section" id="result-area">
+				<p id="result-text" class="result-message"></p>
 			</section>
 		</header>
 
