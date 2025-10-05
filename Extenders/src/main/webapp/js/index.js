@@ -1,5 +1,8 @@
 // エンドポイント
-const ws = new WebSocket("wss://74.220.48.1:8080/Extenders/chat");
+const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+const host = window.location.host; // 例: dep-demo-y5hj.onrender.com
+const ws = new WebSocket(`${protocol}//${host}/Extenders/chat`);
+
 
 $(function () {
   const pElement = document.getElementById("result-text");
