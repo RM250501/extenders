@@ -1,7 +1,7 @@
 // エンドポイント
 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 const host = window.location.host; // 例: dep-demo-y5hj.onrender.com
-const ws = new WebSocket(`${protocol}//${host}/Extenders/chat`);
+const ws = new WebSocket(`${protocol}//${host}/myapp/Extenders/chat`);
 
 
 $(function () {
