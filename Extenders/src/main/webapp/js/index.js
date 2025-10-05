@@ -1,5 +1,5 @@
 // エンドポイント
-const ws = new WebSocket("ws://localhost:8080/Extenders/chat");
+const ws = new WebSocket("wss://" + window.location.host + "/myapp/Extenders/chat");
 
 $(function() {
 	// ----- 要素の取得 -----
