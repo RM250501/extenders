@@ -1,4 +1,4 @@
-https://test-vf1w.onrender.com/Extenders/title.html
+https://dep-demo-y5hj.onrender.com/myapp/title.html
 
 上記リンクをクリックすることで、render上でアプリケーションが起動します。
 
