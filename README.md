@@ -13,6 +13,12 @@
 
 ・Render（デプロイ環境）
 
+・HTML
+
+・CSS
+
+・JavaScript
+
 👤 担当
 
 Renderを使用したデプロイを担当しました。
