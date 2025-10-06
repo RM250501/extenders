@@ -1,3 +1,7 @@
+https://test-vf1w.onrender.com/Extenders/title.html
+上記リンクをクリックすることで、render上でアプリケーションが起動します。
+現状、セッションは2人までの参加になっています。
+
 🏆 受賞歴
 
 「かごがくハッカソン by GMOペパボ」にて、チーム “extenders” として6名で参加。
